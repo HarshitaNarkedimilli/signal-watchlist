@@ -1,0 +1,10 @@
+{
+  "name": "signal-backend",
+  "version": "1.0.0",
+  "description": "Signal — backend API. Zero external dependencies, runs with plain node.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Signal — a watchlist that tells you what changed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <h1>Signal</h1>
+      <span class="clock" id="clock"></span>
+    </div>
+    <p class="tagline">What's changed since you last checked — not everything that moved.</p>
+  </header>
+
+  <section class="add-row">
+    <input id="symbol-input" type="text" placeholder="Add a symbol — e.g. AAPL" maxlength="8" autocomplete="off" />
+    <button id="add-btn">Add</button>
+    <span class="add-error" id="add-error"></span>
+  </section>
+
+  <main>
+    <section class="feed-section">
+      <div class="section-head">
+        <h2 id="meaningful-heading">Worth a look</h2>
+        <button class="refresh-btn" id="refresh-btn" title="Check for changes now">Refresh</button>
+      </div>
+      <div id="meaningful-list" class="ledger"></div>
+      <p class="empty-note" id="meaningful-empty" hidden>Nothing has moved outside its normal range since your last visit.</p>
+    </section>
+
+    <section class="feed-section quiet-section">
+      <button class="quiet-toggle" id="quiet-toggle">
+        <span id="quiet-count">Unchanged (0)</span>
+        <span class="chevron" id="quiet-chevron">▾</span>
+      </button>
+      <div id="quiet-list" class="ledger quiet" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="status-line">Loading watchlist…</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
